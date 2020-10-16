@@ -27,7 +27,7 @@ gh_api_status <- function() {
   response <- httr::GET(status_url())
 
   # Check status
-  httr::stop_for_status(response)
+  httr::stop_for_status(response, "get API status, ouch!")
 
   # Parse the content
   content <- httr::content(response)
