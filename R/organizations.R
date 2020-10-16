@@ -36,7 +36,7 @@ gh_organizations <- function(since = 1) {
     httr::add_headers("Authorization" = paste("token", token))
   )
 
-  httr::stop_for_status(response)
+  httr::stop_for_status(response, task = "get data from the API, oops")
 
   content <- httr::content(response)
 
