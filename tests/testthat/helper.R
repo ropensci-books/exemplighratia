@@ -3,6 +3,7 @@ with_mock_dir <- function(dir, ...) {
   httptest::.mockPaths(dir)
   if (dir.exists(dir)) {
     ## We already have recorded, so use the fixtures
+    Sys.getenv("GITHUB_PAT" = "foobar")
     httptest::with_mock_api(...)
   } else {
     ## Record!
