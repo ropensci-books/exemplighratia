@@ -14,7 +14,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat
+    presser,
+    withr,
+    testthat,
+    jsonlite
 Config/testthat/edition: 3
 Imports: 
     purrr,
