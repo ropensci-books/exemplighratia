@@ -16,11 +16,7 @@ test_that("gh_api_status() works", {
       })
     web <-  presser::new_app_process(app)
     withr::defer(web$stop())
-    mockery::stub(
-      where = gh_api_status,
-      what = "status_url",
-      how = web$url
-    )
+    Sys.setenv(EXEMPLIGHRATIA_GITHUB_STATUS_URL = web$url())
   }
 
   testthat::expect_type(gh_api_status(), "character")

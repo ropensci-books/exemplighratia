@@ -17,8 +17,7 @@ Suggests:
     presser,
     withr,
     testthat,
-    jsonlite,
-    mockery
+    jsonlite
 Config/testthat/edition: 3
 Imports: 
     purrr,
