@@ -1,7 +1,8 @@
-vcr::use_cassette("gh_organizations", {
-  test_that("gh_organizations works", {
-    testthat::expect_type(gh_organizations(), "character")
+test_that("gh_organizations works", {
+  vcr::use_cassette("gh_organizations", {
+    orgs <- gh_organizations()
   })
+  testthat::expect_type(orgs, "character")
 })
 
 test_that("gh_organizations errors when the API doesn't behave", {
