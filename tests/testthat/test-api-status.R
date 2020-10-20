@@ -25,7 +25,7 @@ test_that("gh_api_status() works", {
 test_that("gh_api_status() errors when the API does not behave", {
   app <- presser::new_app()
   app$get("/", function(req, res) {
-    res$set_status(502L)$send_json(NULL)
+    res$send_status(502L)
   })
   web <-  presser::new_app_process(app)
   withr::defer(web$stop())
