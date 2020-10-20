@@ -2,7 +2,7 @@ gh_v3_url <- function() {
 
   api_url <- Sys.getenv("EXEMPLIGHRATIA_GITHUB_API_URL")
 
-  if(nzchar(api_url)) {
+  if (nzchar(api_url)) {
     return(api_url)
   }
 

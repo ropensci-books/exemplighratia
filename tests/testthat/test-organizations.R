@@ -1,6 +1,6 @@
 test_that("gh_organizations works", {
 
-  if(!nzchar(Sys.getenv("REAL_REQUESTS"))) {
+  if (!nzchar(Sys.getenv("REAL_REQUESTS"))) {
     app <- presser::new_app()
     app$get("/organizations", function(req, res) {
       res$send_json(

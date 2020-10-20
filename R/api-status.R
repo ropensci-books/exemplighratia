@@ -2,7 +2,7 @@ status_url <- function() {
 
   env_url <- Sys.getenv("EXEMPLIGHRATIA_GITHUB_STATUS_URL")
 
-  if(nzchar(env_url)) {
+  if (nzchar(env_url)) {
     return(env_url)
   }
 
