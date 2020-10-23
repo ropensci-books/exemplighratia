@@ -9,4 +9,5 @@ with_mock_dir("gh_organizations_error", {
     # first capture_requests( , simplify = FALSE) then edit
     testthat::expect_error(gh_organizations())
   })
-})
+},
+simplify = FALSE)
