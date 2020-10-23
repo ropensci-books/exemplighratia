@@ -13,8 +13,8 @@ test_that("gh_organizations works", {
         )
     })
     web <-  presser::new_app_process(app)
+    web$local_env(list(EXEMPLIGHRATIA_GITHUB_API_URL = web$url()))
     withr::defer(web$stop())
-    Sys.setenv(EXEMPLIGHRATIA_GITHUB_API_URL = web$url())
   }
 
   testthat::expect_type(gh_organizations(), "character")
