@@ -66,6 +66,15 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
+      - name: Tweak .Rbuildignore
+        env:
+          _R_CHECK_CRAN_INCOMING_REMOTE_: false
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ignore <- readLines(".Rbuildignore")
+          writeLines(ignore[c(1:(length(ignore)-2), length(ignore))], ".Rbuildignore")
+        shell: Rscript {0}
+
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
