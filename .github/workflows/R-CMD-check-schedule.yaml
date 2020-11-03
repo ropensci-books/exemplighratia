@@ -66,20 +66,14 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
-      - name: Tweak .Rbuildignore
-        env:
-          _R_CHECK_CRAN_INCOMING_REMOTE_: false
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ignore <- readLines(".Rbuildignore")
-          writeLines(ignore[c(1:(length(ignore)-2), length(ignore))], ".Rbuildignore")
-        shell: Rscript {0}
-
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--test-dir=inst/real-tests"), error_on = "warning", check_dir = "check")
+        run:|
+          ignore <- readLines(".Rbuildignore")
+          writeLines(ignore[c(1:(length(ignore)-2), length(ignore))], ".Rbuildignore")
+          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--test-dir=inst/real-tests"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
 
       - name: Upload check results
