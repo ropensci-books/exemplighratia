@@ -24,6 +24,8 @@ jobs:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
       VCR_TURN_OFF: ${{ matrix.config.vcrturnoff }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
 
     steps:
       - uses: actions/checkout@v2
