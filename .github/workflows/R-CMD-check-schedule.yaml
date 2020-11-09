@@ -71,9 +71,8 @@ jobs:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ignore <- readLines(file.path(".", ".Rbuildignore"))
-          writeLines(ignore[1:(length(ignore)-1)], file.path(".", ".Rbuildignore"))
-          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--test-dir=inst/real-tests"), error_on = "warning", check_dir = "check")
+          rm -rf tests/testthat && cp -r real-tests tests/testthat
+          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
 
       - name: Upload check results
