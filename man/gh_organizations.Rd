@@ -19,7 +19,7 @@ Get logins of GitHub organizations.
 Refer to https://developer.github.com/v3/orgs/#list-organizations
 }
 \examples{
-\dontrun{
+\dontshow{if (interactive() && nchar(Sys.getenv("GITHUB_PAT"))) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 gh_organizations(since = 42)
-}
+\dontshow{\}) # examplesIf}
 }

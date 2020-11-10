@@ -13,10 +13,9 @@ gh_v3_url <- function() {
 #'
 #' @details Refer to https://developer.github.com/v3/orgs/#list-organizations
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf interactive() && nchar(Sys.getenv("GITHUB_PAT"))
 #' gh_organizations(since = 42)
-#' }
+#'
 gh_organizations <- function(since = 1) {
   url <- httr::modify_url(
     gh_v3_url(),
