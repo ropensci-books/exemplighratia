@@ -1,4 +1,4 @@
 library(testthat)
-library(examplighratia)
+library(exemplighratia)
 
-test_check("examplighratia")
+test_check("exemplighratia")
