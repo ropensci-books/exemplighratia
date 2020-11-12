@@ -12,9 +12,8 @@ test_that("gh_organizations works", {
         auto_unbox = TRUE
         )
     })
-    web <-  presser::new_app_process(app)
+    web <-  presser::local_app_process(app)
     web$local_env(list(EXEMPLIGHRATIA_GITHUB_API_URL = web$url()))
-    withr::defer(web$stop())
   }
 
   testthat::expect_type(gh_organizations(), "character")
