@@ -15,7 +15,8 @@ test_that("gh_api_status() works", {
         )
       })
     web <-  presser::local_app_process(app)
-    web$local_env(list(EXEMPLIGHRATIA_GITHUB_STATUS_URL = web$url()))
+    web$local_env(list(EXEMPLIGHRATIA_GITHUB_STATUS_URL = "{url}"))
+    web$start()
   }
 
   testthat::expect_type(gh_api_status(), "character")
@@ -27,6 +28,7 @@ test_that("gh_api_status() errors when the API does not behave", {
     res$send_status(502L)
   })
   web <-  presser::local_app_process(app)
-  web$local_env(list(EXEMPLIGHRATIA_GITHUB_STATUS_URL = web$url()))
+  web$local_env(list(EXEMPLIGHRATIA_GITHUB_STATUS_URL = "{url}"))
+  web$start()
   testthat::expect_error(gh_api_status(), "ouch")
 })
