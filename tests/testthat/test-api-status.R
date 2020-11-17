@@ -1,3 +1,6 @@
 test_that("gh_api_status() works", {
-  testthat::expect_type(gh_api_status(), "character")
+  vcr::use_cassette("error-status", {
+    testthat::expect_error(gh_api_status())
+  })
+
 })
