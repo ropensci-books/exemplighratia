@@ -1,6 +1,6 @@
 test_that("gh_api_status() works", {
   if (!nzchar(Sys.getenv("REAL_REQUESTS"))) {
-   app <- presser::new_app()
+   app <- webfakes::new_app()
       app$get("/", function(req, res) {
         res$send_json(
           list( components =
@@ -14,7 +14,7 @@ test_that("gh_api_status() works", {
           auto_unbox = TRUE
         )
       })
-    web <-  presser::local_app_process(app, start = TRUE)
+    web <-  webfakes::local_app_process(app, start = TRUE)
     web$local_env(list(EXEMPLIGHRATIA_GITHUB_STATUS_URL = "{url}"))
   }
 
@@ -22,11 +22,11 @@ test_that("gh_api_status() works", {
 })
 
 test_that("gh_api_status() errors when the API does not behave", {
-  app <- presser::new_app()
+  app <- webfakes::new_app()
   app$get("/", function(req, res) {
     res$send_status(502L)
   })
-  web <-  presser::local_app_process(app, start = TRUE)
+  web <-  webfakes::local_app_process(app, start = TRUE)
   web$local_env(list(EXEMPLIGHRATIA_GITHUB_STATUS_URL = "{url}"))
   testthat::expect_error(gh_api_status(), "ouch")
 })
