@@ -22,4 +22,5 @@ Imports:
     purrr,
     httr
 Remotes:
-   ropensci/vcr
+   ropensci/vcr,
+   ropensci/webmockr
