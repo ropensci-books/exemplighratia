@@ -1,6 +1,6 @@
 library("vcr")
 
-vcr_dir <- "../fixtures"
+vcr_dir <- vcr::vcr_test_path("fixtures")
 
 if (!nzchar(Sys.getenv("GITHUB_PAT"))) {
   if (dir.exists(vcr_dir)) {
