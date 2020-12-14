@@ -13,5 +13,5 @@ if (!nzchar(Sys.getenv("GITHUB_PAT"))) {
 
 invisible(vcr::vcr_configure(
   dir = vcr_dir,
-  filter_sensitive_data = list("<<github_api_token>>" = Sys.getenv('GITHUB_PAT'))
+  filter_request_headers = list(Authorization = "My bearer token is safe")
 ))
