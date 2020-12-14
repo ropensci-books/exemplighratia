@@ -16,7 +16,7 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat,
     webmockr,
-    vcr
+    vcr ( >= 0.6.0 )
 Config/testthat/edition: 3
 Imports: 
     purrr,
