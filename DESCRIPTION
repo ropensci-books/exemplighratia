@@ -21,5 +21,3 @@ Config/testthat/edition: 3
 Imports: 
     purrr,
     httr
-Remotes:
-    maelle/httptest@withdir
