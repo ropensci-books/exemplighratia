@@ -1,4 +1,11 @@
 status_url <- function() {
+
+  env_url <- Sys.getenv("EXEMPLIGHRATIA_GITHUB_STATUS_URL")
+
+  if (nzchar(env_url)) {
+    return(env_url)
+  }
+
   "https://kctbh9vrtdwd.statuspage.io/api/v2/components.json"
 }
 
@@ -20,7 +27,7 @@ gh_api_status <- function() {
   response <- httr::GET(status_url())
 
   # Check status
-  httr::stop_for_status(response)
+  httr::stop_for_status(response, "get API status, ouch!")
 
   # Parse the content
   content <- httr::content(response)
