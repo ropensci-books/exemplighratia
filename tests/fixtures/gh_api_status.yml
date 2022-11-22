@@ -1,0 +1,58 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://kctbh9vrtdwd.statuspage.io/api/v2/components.json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: My bearer token is safe
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      vary: Accept,Accept-Encoding,Fastly-SSL
+      cache-control: max-age=0, private, must-revalidate
+      x-cache: MISS
+      content-type: application/json; charset=utf-8
+      content-encoding: gzip
+      strict-transport-security: max-age=259200
+      date: Mon, 14 Dec 2020 13:36:27 GMT
+      x-request-id: 1e2b60ce-b2e9-4511-8a54-2bc081178583
+      x-download-options: noopen
+      x-xss-protection: 1; mode=block
+      x-runtime: '0.039658'
+      x-permitted-cross-domain-policies: none
+      access-control-allow-origin: '*'
+      accept-ranges: bytes
+      x-content-type-options: nosniff
+      etag: W/"gz[fd28ddd5c0e61f8f9ef06b9211fefcdd]"
+      x-statuspage-skip-logging: 'true'
+      x-statuspage-version: 4639ace0759d8bd9ebdda5d4637cc1b43b8e8d62
+      referrer-policy: strict-origin-when-cross-origin
+      age: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"page":{"id":"kctbh9vrtdwd","name":"GitHub","url":"https://www.githubstatus.com","time_zone":"Etc/UTC","updated_at":"2020-12-14T08:04:41.926Z"},"components":[{"id":"8l4ygp009s5s","name":"Git
+        Operations","status":"operational","created_at":"2017-01-31T20:05:05.370Z","updated_at":"2020-10-29T22:51:43.831Z","position":1,"description":"Performance
+        of git clones, pulls, pushes, and associated operations","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"brv1bkgrwx7q","name":"API
+        Requests","status":"operational","created_at":"2017-01-31T20:01:46.621Z","updated_at":"2020-10-30T22:01:20.086Z","position":2,"description":"Requests
+        for GitHub APIs","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"4230lsnqdsld","name":"Webhooks","status":"operational","created_at":"2019-11-13T18:00:24.256Z","updated_at":"2020-11-18T23:38:14.467Z","position":3,"description":"Real
+        time HTTP callbacks of user-generated and system events","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"0l2p9nhqnxpd","name":"Visit
+        www.githubstatus.com for more information","status":"operational","created_at":"2018-12-05T19:39:40.838Z","updated_at":"2020-04-02T21:56:21.954Z","position":4,"description":null,"showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"kr09ddfgbfsf","name":"Issues","status":"operational","created_at":"2017-01-31T20:01:46.638Z","updated_at":"2020-11-18T23:36:59.799Z","position":5,"description":"Requests
+        for Issues on GitHub.com","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"hhtssxt0f5v2","name":"Pull
+        Requests","status":"operational","created_at":"2020-09-02T15:39:06.329Z","updated_at":"2020-11-18T23:36:47.289Z","position":6,"description":"Requests
+        for Pull Requests on GitHub.com","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"br0l2tvcx85d","name":"GitHub
+        Actions","status":"operational","created_at":"2019-11-13T18:02:19.432Z","updated_at":"2020-12-01T22:33:58.390Z","position":7,"description":"Workflows,
+        Compute and Orchestration for GitHub Actions","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"st3j38cctv9l","name":"GitHub
+        Packages","status":"operational","created_at":"2019-11-13T18:02:40.064Z","updated_at":"2020-09-08T15:50:32.845Z","position":8,"description":"API
+        requests and webhook delivery for GitHub Packages","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false},{"id":"vg70hn9s2tyj","name":"GitHub
+        Pages","status":"operational","created_at":"2017-01-31T20:04:33.923Z","updated_at":"2020-10-10T00:02:38.220Z","position":9,"description":"Frontend
+        application and API servers for Pages builds","showcase":false,"start_date":null,"group_id":null,"page_id":"kctbh9vrtdwd","group":false,"only_show_if_degraded":false}]}'
+  recorded_at: 2020-12-14 13:36:27 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
