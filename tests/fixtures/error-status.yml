@@ -1,0 +1,14 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://kctbh9vrtdwd.statuspage.io/api/v2/components.json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 502
+  recorded_at: 2020-11-12 15:29:07 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
